@@ -1,13 +1,14 @@
-FROM ubuntu:14.04
-MAINTAINER Hong-She Liang <starofrainnight@gmail.com>
+FROM debian:stretch
+MAINTAINER PeGa! <dev@pega.sh>
 
 ENV LANG C.UTF-8
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt full-upgrade -y && apt install -y \
     python \
     subversion \
-    libapache2-svn \
-    apache2-mpm-prefork \
+    libapache2-mod-svn \
+    apache2 \
+    apache2-utils \
     links \
     psmisc \
     wget \
